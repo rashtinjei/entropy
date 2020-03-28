@@ -409,9 +409,6 @@ class GoAThread(threading.Thread):
                 subprocess.Popen("rm %s 2>/dev/null" % self.strings_out_path, shell=True)
     def run(self):
         self.getInfo()
-        if args.outputfile:
-            time.sleep(0)
-        time.sleep(0)
 
 class Scrapy(object):
     def __init__(self,key,app,page=None):
