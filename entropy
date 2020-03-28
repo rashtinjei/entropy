@@ -410,7 +410,7 @@ class GoAThread(threading.Thread):
     def run(self):
         self.getInfo()
         if args.outputfile:
-            logger.info('')
+            time.sleep(0)
         time.sleep(0)
 
 class Scrapy(object):
