@@ -61,7 +61,7 @@
 usage: entropy [-h] [-b [1|2]] [-o <outputfile>] [--timeout <timeout>]
                [-t <tasks>] [-c <count>] [-q | -v]
                [-a <address> | -i <inputfile> | --shodan <API> | --zoomeye <API>]
-               [-u]
+               [-u] [--version]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -83,6 +83,7 @@ optional arguments:
   --shodan <API>        Your Shodan API key.
   --zoomeye <API>       Your ZoomEye API key.
   -u, --update          Update Entropy Toolkit.
+  --version             Show Entropy Toolkit version.
 ```
 
 ***
