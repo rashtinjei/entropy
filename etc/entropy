@@ -57,11 +57,18 @@ group2.add_argument("-i","--input",metavar="<inputfile>",dest='inputfile',help="
 group2.add_argument("--shodan",metavar="<API>",dest='shodan',help="Your Shodan API key.",type=str)
 group2.add_argument("--zoomeye",metavar="<API>",dest='zoomeye',help="Your ZoomEye API key.",type=str)
 parser.add_argument("-u","--update",dest='update',help="Update Entropy Toolkit.",action='store_true')
+parser.add_argument("--version",dest='update',help="Show Entropy Toolkit version.",action='store_true')
 
 args=parser.parse_args()
 
 if args.update:
     os.system("chmod +x bin/entropy && bin/entropy -u")
+    sys.exit()
+
+if args.version:
+    os.system("cat banner/banner.txt")
+    print("")
+    print("Entropy Toolkit v3.0")
     sys.exit()
 
 if args.outputfile:
@@ -479,8 +486,7 @@ def crack(tmp_ip_list):
 def bundle():
     import os
     os.system("clear")
-    banner = open("banner/banner.txt").read()
-    print(banner)
+    os.system("cat banner/banner.txt")
 
 def main():
     class Color(object):
