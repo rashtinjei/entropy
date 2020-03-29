@@ -532,7 +532,6 @@ def main():
         bundle()
         try:
             tmp_ip_list = []
-            import sys
             
             inputfile = args.inputfile
                 
