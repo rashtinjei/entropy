@@ -73,7 +73,6 @@ if args.version:
 
 if args.outputfile:
     logger = logging.getLogger()
-    import sys
     
     outputfile = args.outputfile    
 
@@ -86,7 +85,7 @@ if args.outputfile:
 
 def handlesignal(signum,frame):
     print(color.C+"\n[!]" + color.E + " You choose to stop exploiting." + color.D)
-    sys.exit(0)
+    sys.exit()
 
 class Color(object):
     A = '\033[1;34m'
@@ -481,7 +480,6 @@ def crack(tmp_ip_list):
         pass
 
 def bundle():
-    import os
     os.system("clear")
     os.system("cat banner/banner.txt")
     print("")
@@ -567,17 +565,4 @@ def main():
         parser.print_help()
         
 if __name__=='__main__':
-    try:
-        main()
-    except Exception:
-        A = '\033[1;34m'
-        B = '\033[1;31m'
-        C = '\033[1;33m'
-        E = '\033[0m'
-        G = '\033[1;32m'
-        D = '\033[0m'
-        import os
-        os.system("clear")
-        banner = open("banner/banner.txt").read()
-        print(banner)
-        print(C+"[!]"+E+" Please use python3 entropy.py -h or entropy -h for more help."+D)
+    main()
