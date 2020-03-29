@@ -487,6 +487,7 @@ def bundle():
     import os
     os.system("clear")
     os.system("cat banner/banner.txt")
+    print("")
 
 def main():
     class Color(object):
