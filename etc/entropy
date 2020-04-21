@@ -73,17 +73,23 @@ if args.version:
 
 if args.outputfile:
     logger = logging.getLogger()
-                    
+        
     if args.outputfile[0] != '/':
-         outputfile = os.environ['OLDPWD']+'/'+args.outputfile
+        outputfile = os.environ['OLDPWD']+'/'+args.outputfile
     else:
-         outputfile = args.outputfile    
-    try:
-        fh = logging.FileHandler(outputfile)
-    except Exception:
-        fh=logging.FileHandler(TMP_PATH+outputfile)
-    logger.addHandler(fh)
-    logger.setLevel(logging.INFO)
+        outputfile = args.outputfile
+        
+    predir = os.path.split(outputfile)
+    
+    if os.path.exists(predir):
+        if os.path.isdir(predir):
+            fh = logging.FileHandler(outputfile)
+            logger.addHandler(fh)
+            logger.setLevel(logging.INFO)
+        else:
+            print(color.B+"[-]"+color.E+" Error: "+predir+": not a directory!")
+    else:
+        print(color.B+"[-]"+color.E+" Local directory: "+predir+": does not exist!")
 
 def handlesignal(signum,frame):
     print(color.C+"\n[!]" + color.E + " You choose to stop exploiting." + color.D)
