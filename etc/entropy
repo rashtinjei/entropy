@@ -553,7 +553,7 @@ def main():
             crack(tmp_ip_list)
             print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: File is not found")
+            print(color.B+"[-]"+color.E+" The error occured: Local file: "+inputfile+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
             
     elif args.address:
