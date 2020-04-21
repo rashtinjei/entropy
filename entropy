@@ -75,14 +75,18 @@ if args.outputfile:
     logger = logging.getLogger()
     
     outputfile = args.outputfile    
-
-    try:
-        fh = logging.FileHandler(outputfile)
-    except Exception:
-        fh=logging.FileHandler(TMP_PATH+args.outputfile)
-    logger.addHandler(fh)
-    logger.setLevel(logging.INFO)
-
+    predir = os.path.split(outputfile)[0]
+    
+    if os.path.exists(predir):
+        if os.path.isdir(predir):
+            fh = logging.FileHandler(outputfile)
+            logger.addHandler(fh)
+            logger.setLevel(logging.INFO)
+        else:
+            print(color.B+"[-]"+color.E+" Error: "+predir+": not a directory!")
+    else:
+        print(color.B+"[-]"+color.E+" Local directory: "+predir+": does not exist!")
+        
 def handlesignal(signum,frame):
     print(color.C+"\n[!]" + color.E + " You choose to stop exploiting." + color.D)
     sys.exit()
