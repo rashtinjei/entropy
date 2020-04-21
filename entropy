@@ -83,9 +83,13 @@ if args.outputfile:
             logger.addHandler(fh)
             logger.setLevel(logging.INFO)
         else:
-            print(color.B+"[-]"+color.E+" Error: "+predir+": not a directory!")
+            print(color.B+"[-]"+color.E+" The error occured: Error: "+predir+": not a directory!")
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+            sys.exit()
     else:
-        print(color.B+"[-]"+color.E+" Local directory: "+predir+": does not exist!")
+        print(color.B+"[-]"+color.E+" The error occured: Local directory: "+predir+": does not exist!")
+        print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+        sys.exit()
         
 def handlesignal(signum,frame):
     print(color.C+"\n[!]" + color.E + " You choose to stop exploiting." + color.D)
@@ -546,7 +550,7 @@ def main():
             crack(tmp_ip_list)
             print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: File is not found")
+            print(color.B+"[-]"+color.E+" The error occured: Local file: "+inputfile+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
             
     elif args.address:
