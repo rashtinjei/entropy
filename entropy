@@ -90,9 +90,14 @@ if args.outputfile:
     
     if os.path.exists(predir):
         if os.path.isdir(predir):
-            fh = logging.FileHandler(outputfile)
-            logger.addHandler(fh)
-            logger.setLevel(logging.INFO)
+            if os.path.isdir(outputfile):
+                print(color.B+"[-]"+color.E+" The error occured: Error: "+outputfile+": is a directory!")
+                print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+                sys.exit()
+            else:
+                fh = logging.FileHandler(outputfile)
+                logger.addHandler(fh)
+                logger.setLevel(logging.INFO)
         else:
             print(color.B+"[-]"+color.E+" The error occured: Error: "+predir+": not a directory!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
@@ -549,21 +554,26 @@ def main():
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
     elif args.inputfile:
         bundle()
-        try:
-            tmp_ip_list = []
+        tmp_ip_list = []
             
-            if args.inputfile[0] != '/':
-                inputfile = os.getcwd()+'/'+args.inputfile
-            else:
-                inputfile = args.inputfile
-                
-            with open(inputfile,'r') as f:
-                for i in f.readlines():
-                    tmp_ip_list.append(i.strip())
+        if args.inputfile[0] != '/':
+            inputfile = os.getcwd()+'/'+args.inputfile
+        else:
+            inputfile = args.inputfile
+        
+        if os.path.exists(inputfile):
+            if os.path.isdir(inputfile):
+                print(color.B+"[-]"+color.E+" The error occured: Error: "+inputfile+": is a directory!")
+                print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+                sys.exit()
+            else:   
+                with open(inputfile,'r') as f:
+                    for i in f.readlines():
+                        tmp_ip_list.append(i.strip())
                     
-            crack(tmp_ip_list)
-            print(color.C+"[!]"+color.E+" Exploitation completed.")
-        except Exception as e:
+                crack(tmp_ip_list)
+                print(color.C+"[!]"+color.E+" Exploitation completed.")
+        else:
             print(color.B+"[-]"+color.E+" The error occured: Local file: "+inputfile+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
             
