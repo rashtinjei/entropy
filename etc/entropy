@@ -90,9 +90,14 @@ if args.outputfile:
     
     if os.path.exists(predir):
         if os.path.isdir(predir):
-            fh = logging.FileHandler(outputfile)
-            logger.addHandler(fh)
-            logger.setLevel(logging.INFO)
+            if os.path.isdir(outputfile):
+                print(color.B+"[-]"+color.E+" The error occured: Error: "+outputfile+": is a directory!")
+                print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+                sys.exit()
+            else:
+                fh = logging.FileHandler(outputfile)
+                logger.addHandler(fh)
+                logger.setLevel(logging.INFO)
         else:
             print(color.B+"[-]"+color.E+" The error occured: Error: "+predir+": not a directory!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
