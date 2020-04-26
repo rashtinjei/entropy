@@ -81,12 +81,12 @@ if args.outputfile:
     G = '\033[1;32m'
     D = '\033[0m'
     
-    outputfile = args.outputfile    
-    predir = os.path.split(outputfile)[0]
+    if args.outputfile[0] != '/':
+        outputfile = os.getcwd()+'/'+args.outputfile
+    else:
+        outputfile = args.outputfile
     
-    if predir == "":
-        predir = os.getcwd()
-        outputfile = predir + '/' + args.outputfile
+    predir = os.path.split(outputfile)[0]
     
     if os.path.exists(predir):
         if os.path.isdir(predir):
@@ -552,7 +552,10 @@ def main():
         try:
             tmp_ip_list = []
             
-            inputfile = args.inputfile
+            if args.inputfile[0] != '/':
+                inputfile = os.getcwd()+'/'+args.inputfile
+            else:
+                inputfile = args.inputfile
                 
             with open(inputfile,'r') as f:
                 for i in f.readlines():
