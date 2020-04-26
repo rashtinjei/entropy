@@ -84,6 +84,10 @@ if args.outputfile:
     outputfile = args.outputfile    
     predir = os.path.split(outputfile)[0]
     
+    if predir == "":
+        predir = os.getcwd()
+        outputfile = predir + '/' + args.outputfile
+    
     if os.path.exists(predir):
         if os.path.isdir(predir):
             fh = logging.FileHandler(outputfile)
