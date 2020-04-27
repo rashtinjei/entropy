@@ -80,32 +80,46 @@ if args.outputfile:
     E = '\033[0m'
     G = '\033[1;32m'
     D = '\033[0m'
-        
-    if args.outputfile[0] != '/':
-        outputfile = os.environ['OLDPWD']+'/'+args.outputfile
-    else:
-        outputfile = args.outputfile
-        
-    predir = os.path.split(outputfile)
     
-    if os.path.exists(predir):
-        if os.path.isdir(predir):
-            if os.path.isdir(outputfile):
-                print(color.B+"[-]"+color.E+" The error occured: Error: "+outputfile+": is a directory!")
-                print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
-                sys.exit()
-            else:
+    w = os.environ['OLDPWD']
+    os.chdir(w)
+    if os.path.isdir(outputfile):
+	    if os.path.exists(outputfile):
+	        if outputfile[-1:] == "/":
+                outputfile = outputfile + 'output.txt'
                 fh = logging.FileHandler(outputfile)
                 logger.addHandler(fh)
                 logger.setLevel(logging.INFO)
-        else:
-            print(color.B+"[-]"+color.E+" The error occured: Error: "+predir+": not a directory!")
+            else:
+                outputfile = outputfile + '/output.txt'
+                fh = logging.FileHandler(outputfile)
+                logger.addHandler(fh)
+                logger.setLevel(logging.INFO)
+	    else:
+	        print(color.B+"[-]"+color.E+" The error occured: Local directory: "+outputfile+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
             sys.exit()
     else:
-        print(color.B+"[-]"+color.E+" The error occured: Local directory: "+predir+": does not exist!")
-        print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
-        sys.exit()
+	    direct = os.path.split(path)[0]
+        if direct == "":
+            direct = "."
+        else:
+            pass
+	    if os.path.exists(direct):
+            if os.path.isdir(direct):
+                fh = logging.FileHandler(outputfile)
+                logger.addHandler(fh)
+                logger.setLevel(logging.INFO)
+            else:
+                print(color.B+"[-]"+color.E+" The error occured: Error: "+direct+": not a directory!")
+                print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+                sys.exit()
+	    else:
+	        print(color.B+"[-]"+color.E+" The error occured: Local directory: "+direct+": does not exist!")
+            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+            sys.exit()
+    g = os.environ['HOME']
+    os.chdir(g + "/mouse")
 
 def handlesignal(signum,frame):
     print(color.C+"\n[!]" + color.E + " You choose to stop exploiting." + color.D)
@@ -555,12 +569,9 @@ def main():
     elif args.inputfile:
         bundle()
         tmp_ip_list = []
-            
-        if args.inputfile[0] != '/':
-            inputfile = os.environ['OLDPWD']+'/'+args.inputfile
-        else:
-            inputfile = args.inputfile  
-                
+        
+        w = os.environ['OLDPWD']
+        os.chdir(w)
         if os.path.exists(inputfile):
             if os.path.isdir(inputfile):
                 print(color.B+"[-]"+color.E+" The error occured: Error: "+inputfile+": is a directory!")
@@ -576,6 +587,8 @@ def main():
         else:
             print(color.B+"[-]"+color.E+" The error occured: Local file: "+inputfile+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+        g = os.environ['HOME']
+        os.chdir(g + "/mouse")
             
     elif args.address:
         bundle()
