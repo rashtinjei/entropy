@@ -98,6 +98,8 @@ if args.outputfile:
 	else:
 	    print(color.B+"[-]"+color.E+" The error occured: Local directory: "+outputfile+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+	    g = os.environ['HOME']
+    	    os.chdir(g + "/entropy")
             sys.exit()
     else:
 	direct = os.path.split(path)[0]
@@ -113,10 +115,14 @@ if args.outputfile:
             else:
                 print(color.B+"[-]"+color.E+" The error occured: Error: "+direct+": not a directory!")
                 print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+		g = os.environ['HOME']
+    		os.chdir(g + "/entropy")
                 sys.exit()
 	else:
 	    print(color.B+"[-]"+color.E+" The error occured: Local directory: "+direct+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+	    g = os.environ['HOME']
+    	    os.chdir(g + "/entropy")
             sys.exit()
     g = os.environ['HOME']
     os.chdir(g + "/entropy")
@@ -576,6 +582,8 @@ def main():
             if os.path.isdir(inputfile):
                 print(color.B+"[-]"+color.E+" The error occured: Error: "+inputfile+": is a directory!")
                 print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+		g = os.environ['HOME']
+    		os.chdir(g + "/entropy")
                 sys.exit()
             else:   
                 with open(inputfile,'r') as f:
@@ -587,6 +595,9 @@ def main():
         else:
             print(color.B+"[-]"+color.E+" The error occured: Local file: "+inputfile+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+	    g = os.environ['HOME']
+    	    os.chdir(g + "/entropy")
+	    sys.exit()
         g = os.environ['HOME']
         os.chdir(g + "/entropy")
             
