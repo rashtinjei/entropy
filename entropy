@@ -100,7 +100,7 @@ if args.outputfile:
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
             sys.exit()
     else:
-	direct = os.path.split(path)[0]
+	direct = os.path.split(outputfile)[0]
         if direct == "":
             direct = "."
         else:
