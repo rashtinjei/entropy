@@ -80,6 +80,8 @@ if args.outputfile:
     E = '\033[0m'
     G = '\033[1;32m'
     D = '\033[0m'
+	
+    outputfile = args.outputfile
     
     w = os.environ['OLDPWD']
     os.chdir(w)
@@ -576,6 +578,8 @@ def main():
         bundle()
         tmp_ip_list = []
         
+	inputfile = args.inputfile
+	
         w = os.environ['OLDPWD']
         os.chdir(w)
         if os.path.exists(inputfile):
