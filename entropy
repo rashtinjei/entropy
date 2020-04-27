@@ -80,6 +80,8 @@ if args.outputfile:
     E = '\033[0m'
     G = '\033[1;32m'
     D = '\033[0m'
+	
+    outputfile = args.outputfile
     
     if os.path.isdir(outputfile):
 	if os.path.exists(outputfile):
@@ -566,6 +568,8 @@ def main():
         bundle()
         tmp_ip_list = []
         
+	inputfile = args.inputfile
+	
         if os.path.exists(inputfile):
             if os.path.isdir(inputfile):
                 print(color.B+"[-]"+color.E+" The error occured: Error: "+inputfile+": is a directory!")
