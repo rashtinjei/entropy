@@ -104,7 +104,7 @@ if args.outputfile:
     	    os.chdir(g + "/entropy")
             sys.exit()
     else:
-	direct = os.path.split(path)[0]
+	direct = os.path.split(outputfile)[0]
         if direct == "":
             direct = "."
         else:
