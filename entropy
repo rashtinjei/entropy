@@ -568,7 +568,7 @@ def main():
         bundle()
         tmp_ip_list = []
         
-	inputfile = args.inputfile
+        inputfile = args.inputfile
 	
         if os.path.exists(inputfile):
             if os.path.isdir(inputfile):
