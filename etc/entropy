@@ -86,8 +86,8 @@ if args.outputfile:
     w = os.environ['OLDPWD']
     os.chdir(w)
     if os.path.isdir(outputfile):
-	if os.path.exists(outputfile):
-	    if outputfile[-1:] == "/":
+        if os.path.exists(outputfile):
+            if outputfile[-1:] == "/":
                 outputfile = outputfile + 'output.txt'
                 fh = logging.FileHandler(outputfile)
                 logger.addHandler(fh)
@@ -97,19 +97,19 @@ if args.outputfile:
                 fh = logging.FileHandler(outputfile)
                 logger.addHandler(fh)
                 logger.setLevel(logging.INFO)
-	else:
-	    print(color.B+"[-]"+color.E+" The error occured: Local directory: "+outputfile+": does not exist!")
+        else:
+            print(color.B+"[-]"+color.E+" The error occured: Local directory: "+outputfile+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
-	    g = os.environ['HOME']
-    	    os.chdir(g + "/entropy")
+            g = os.environ['HOME']
+            os.chdir(g + "/entropy")
             sys.exit()
     else:
-	direct = os.path.split(outputfile)[0]
+        direct = os.path.split(outputfile)[0]
         if direct == "":
             direct = "."
         else:
             pass
-	if os.path.exists(direct):
+        if os.path.exists(direct):
             if os.path.isdir(direct):
                 fh = logging.FileHandler(outputfile)
                 logger.addHandler(fh)
@@ -117,14 +117,14 @@ if args.outputfile:
             else:
                 print(color.B+"[-]"+color.E+" The error occured: Error: "+direct+": not a directory!")
                 print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
-		g = os.environ['HOME']
-    		os.chdir(g + "/entropy")
+                g = os.environ['HOME']
+                os.chdir(g + "/entropy")
                 sys.exit()
-	else:
-	    print(color.B+"[-]"+color.E+" The error occured: Local directory: "+direct+": does not exist!")
+        else:
+            print(color.B+"[-]"+color.E+" The error occured: Local directory: "+direct+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
-	    g = os.environ['HOME']
-    	    os.chdir(g + "/entropy")
+            g = os.environ['HOME']
+            os.chdir(g + "/entropy")
             sys.exit()
     g = os.environ['HOME']
     os.chdir(g + "/entropy")
@@ -578,7 +578,7 @@ def main():
         bundle()
         tmp_ip_list = []
         
-	inputfile = args.inputfile
+        inputfile = args.inputfile
 	
         w = os.environ['OLDPWD']
         os.chdir(w)
@@ -586,8 +586,8 @@ def main():
             if os.path.isdir(inputfile):
                 print(color.B+"[-]"+color.E+" The error occured: Error: "+inputfile+": is a directory!")
                 print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
-		g = os.environ['HOME']
-    		os.chdir(g + "/entropy")
+                g = os.environ['HOME']
+                os.chdir(g + "/entropy")
                 sys.exit()
             else:   
                 with open(inputfile,'r') as f:
@@ -599,9 +599,9 @@ def main():
         else:
             print(color.B+"[-]"+color.E+" The error occured: Local file: "+inputfile+": does not exist!")
             print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
-	    g = os.environ['HOME']
-    	    os.chdir(g + "/entropy")
-	    sys.exit()
+            g = os.environ['HOME']
+            os.chdir(g + "/entropy")
+            sys.exit()
         g = os.environ['HOME']
         os.chdir(g + "/entropy")
             
