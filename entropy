@@ -96,8 +96,8 @@ if args.outputfile:
                 logger.addHandler(fh)
                 logger.setLevel(logging.INFO)
         else:
-            print(color.B+"[-]"+color.E+" The error occured: Local directory: "+outputfile+": does not exist!")
-            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+            print(color.B+"[-]"+color.E+" Local directory: "+outputfile+": does not exist!")
+            # Standart Error Message
             sys.exit()
     else:
         direct = os.path.split(outputfile)[0]
@@ -111,12 +111,12 @@ if args.outputfile:
                 logger.addHandler(fh)
                 logger.setLevel(logging.INFO)
             else:
-                print(color.B+"[-]"+color.E+" The error occured: Error: "+direct+": not a directory!")
-                print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+                print(color.B+"[-]"+color.E+" Error: "+direct+": not a directory!")
+                # Standart Error Message
                 sys.exit()
         else:
-            print(color.B+"[-]"+color.E+" The error occured: Local directory: "+direct+": does not exist!")
-            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+            print(color.B+"[-]"+color.E+" Local directory: "+direct+": does not exist!")
+            # Standart Error Message
             sys.exit()
         
 def handlesignal(signum,frame):
@@ -544,7 +544,7 @@ def main():
             print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
             print(color.B+"[-]"+color.E+" The error occured:",e)
-            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
+            # Standart Error Message
     elif args.zoomeye:
         bundle()
         try:
@@ -563,7 +563,7 @@ def main():
             print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
             print(color.B+"[-]"+color.E+" The error occured:",e)
-            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)            
+            # Standart Error Message
     elif args.inputfile:
         bundle()
         tmp_ip_list = []
@@ -572,8 +572,8 @@ def main():
 	
         if os.path.exists(inputfile):
             if os.path.isdir(inputfile):
-                print(color.B+"[-]"+color.E+" The error occured: Error: "+inputfile+": is a directory!")
-                print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+                print(color.B+"[-]"+color.E+" Error: "+inputfile+": is a directory!")
+                # Standart Error Message
                 sys.exit()
             else:   
                 with open(inputfile,'r') as f:
@@ -583,8 +583,8 @@ def main():
                 crack(tmp_ip_list)
                 print(color.C+"[!]"+color.E+" Exploitation completed.")
         else:
-            print(color.B+"[-]"+color.E+" The error occured: Local file: "+inputfile+": does not exist!")
-            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+            print(color.B+"[-]"+color.E+" Local file: "+inputfile+": does not exist!")
+            # Standart Error Message
             
     elif args.address:
         bundle()
@@ -600,7 +600,7 @@ def main():
             print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
             print(color.B+"[-]"+color.E+" The error occured: %s" % e)
-            print(color.C+"[!]"+color.E+" Please use python3 entropy.py -h or entropy -h for more help."+color.D)
+            # Standart Error Message
     else:
         parser.print_help()
         
