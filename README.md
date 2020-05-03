@@ -28,9 +28,9 @@
 # About Entropy Toolkit
 
 ```
-Entropy Toolkit is a set of tools to exploit 
-Netwave and GoAhead IP Webcams. Entropy is a 
-powerful toolkit for webcams penetration testing.
+Entropy Toolkit is a set of tools to exploit Netwave 
+and GoAhead IP Webcams. Entropy Toolkit is a powerful 
+toolkit for webcams penetration testing.
 ```
 
 ***
