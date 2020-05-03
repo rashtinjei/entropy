@@ -92,15 +92,15 @@ optional arguments:
 
 # Entropy Toolkit examples
 
-## Example of exploiting a single webcam
+## Example of attacking a single webcam
     
 > entropy -b 1 -i 192.168.1.100:80 -v  
 
-## Example of exploiting webcams from a file
+## Example of attacking webcams from a file
 
 > entropy -b 2 -l iplist.txt -v
 
-## Example of exploiting webcams using shodan
+## Example of attacking webcams using shodan
 
 > entropy -b 2 -v --shodan PSKINdQe1GyxGgecYz2191H2JoS9qvgD
 
