@@ -130,7 +130,7 @@ if args.outputfile:
     os.chdir(g + "/entropy")
 
 def handlesignal(signum,frame):
-    print(color.C+"\n[!]" + color.E + " You choose to stop exploiting." + color.D)
+    print(color.C+"\n[!]" + color.E + " You choose to stop attack." + color.D)
     sys.exit()
 
 class Color(object):
@@ -616,7 +616,7 @@ def main():
                 inst=GoAThread(ip=ip,port=port)
             inst.start()
             inst.join()
-            print(color.C+"[!]"+color.E+" Exploitation completed.")
+            print(color.C+"[!]"+color.E+" Attack completed.")
         except Exception as e:
             print(color.B+"[-]"+color.E+" The error occured: %s" % e)
             # Standart Error Message
