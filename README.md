@@ -60,16 +60,16 @@ powerful toolkit for webcams penetration testing.
 > entropy -h
 
 ```
-usage: entropy [-h] [-b [1|2]] [-o <outputfile>] [--timeout <timeout>]
+usage: entropy [-h] [-b [1|2]] [-o <output_path>] [--timeout <timeout>]
                [-t <tasks>] [-c <count>] [-q | -v]
-               [-a <address> | -i <inputfile> | --shodan <API> | --zoomeye <API>]
+               [-a <address> | -i <input_file> | --shodan <API> | --zoomeye <API>]
                [-u] [--version]
 
 optional arguments:
   -h, --help            show this help message and exit
   -b [1|2], --brand [1|2]
                         Choose the brand of IP Webcam. (1)Netwave, (2)GoAhead.
-  -o <outputfile>, --output <outputfile>
+  -o <output_path>, --output <output_path>
                         Output into path you input.
   --timeout <timeout>   Timeout in seconds.
   -t <tasks>, --task <tasks>
@@ -80,7 +80,7 @@ optional arguments:
   -v, --verbose         Verbose mode.
   -a <address>, --address <address>
                         IP:port address of the webcam.
-  -i <inputfile>, --input <inputfile>
+  -i <input_file>, --input <input_file>
                         List of IP:port addresses of webcams.
   --shodan <API>        Your Shodan API key.
   --zoomeye <API>       Your ZoomEye API key.
