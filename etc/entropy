@@ -130,7 +130,7 @@ if args.outputfile:
     os.chdir(g + "/entropy")
 
 def handlesignal(signum,frame):
-    print(color.C+"\n[!]"+color.E+" Attack completed."+color.D)
+    print(color.C+"[!]"+color.E+" Attack completed.")
     sys.exit()
 
 class Color(object):
