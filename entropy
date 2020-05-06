@@ -96,7 +96,7 @@ if args.outputfile:
                 logger.addHandler(fh)
                 logger.setLevel(logging.INFO)
         else:
-            print(color.B+"[-]"+color.E+" Local directory: "+outputfile+": does not exist!")
+            print(color.B+"[-]"+color.E+" Output directory: "+outputfile+": does not exist!")
             # Standart Error Message
             sys.exit()
     else:
@@ -115,7 +115,7 @@ if args.outputfile:
                 # Standart Error Message
                 sys.exit()
         else:
-            print(color.B+"[-]"+color.E+" Local directory: "+direct+": does not exist!")
+            print(color.B+"[-]"+color.E+" Output directory: "+direct+": does not exist!")
             # Standart Error Message
             sys.exit()
         
@@ -583,7 +583,7 @@ def main():
                 crack(tmp_ip_list)
                 print(color.C+"[!]"+color.E+" Attack completed.")
         else:
-            print(color.B+"[-]"+color.E+" Local file: "+inputfile+": does not exist!")
+            print(color.B+"[-]"+color.E+" Input file: "+inputfile+": does not exist!")
             # Standart Error Message
             
     elif args.address:
