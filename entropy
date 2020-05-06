@@ -543,7 +543,7 @@ def main():
                 crack(tmp_ip_list)
             print(color.C+"[!]"+color.E+" Attack completed.")
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured:",e)
+            print(color.B+"[-]"+color.E+" Error: %s" % e)
             # Standart Error Message
     elif args.zoomeye:
         bundle()
@@ -562,7 +562,7 @@ def main():
                 crack(tmp_ip_list)
             print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured:",e)
+            print(color.B+"[-]"+color.E+" Error: %s" % e)
             # Standart Error Message
     elif args.inputfile:
         bundle()
@@ -599,7 +599,7 @@ def main():
             inst.join()
             print(color.C+"[!]"+color.E+" Exploitation completed.")
         except Exception as e:
-            print(color.B+"[-]"+color.E+" The error occured: %s" % e)
+            print(color.B+"[-]"+color.E+" Error: %s" % e)
             # Standart Error Message
     else:
         parser.print_help()
