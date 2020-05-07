@@ -87,7 +87,7 @@ if args.outputfile:
     os.chdir(w)
     if os.path.isdir(outputfile):
         if os.path.exists(outputfile):
-            if outputfile[-1:] == "/":
+            if outputfile[-1] == "/":
                 outputfile = outputfile + 'output.txt'
                 fh = logging.FileHandler(outputfile)
                 logger.addHandler(fh)
