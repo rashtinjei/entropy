@@ -55,20 +55,9 @@ then
    exit
 fi
 
-if [[ -d ~/entropy ]]
-then
-sleep 0
-else
-cd ~
-{
-git clone https://github.com/entynetproject/entropy.git
-} &> /dev/null
-fi
-
 sleep 0.5
 clear
 sleep 0.5
-cd ~/entropy
 cat banner/banner.txt
 echo
 
@@ -112,13 +101,23 @@ xbps-install -y python3
 xbps-install -y python3-pip
 } &> /dev/null
 
+if [[ -d ~/entropy ]]
+then
+sleep 0
+else
+cd ~
+{
+git clone https://github.com/entynetproject/entropy.git
+} &> /dev/null
+fi
+
 {
 python3 -m pip install setuptools
 python3 -m pip install -r requirements.txt
 } &> /dev/null
 
 {
-cd ~/entropy/bin
+cd bin
 cp entropy /usr/local/bin
 chmod +x /usr/local/bin/entropy
 cp entropy /bin
