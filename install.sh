@@ -47,7 +47,7 @@ ASESR="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
 } &> /dev/null
 if [[ "$ASESR" != 0 ]]
 then 
-   echo -e ""$RS"[-] "$WHS"No Internet connection!"$CE""
+   echo -e ""$RS"[-]"$WS" No Internet connection!"$CE""
    exit
 fi
 
@@ -105,6 +105,14 @@ cd ~
 {
 git clone https://github.com/entynetproject/entropy.git
 } &> /dev/null
+fi
+
+if [[ -d ~/entropy ]]
+then
+cd ~/entropy
+else
+echo -e ""$RS"[-]"$WS" Installation failed!"$CE""
+exit
 fi
 
 {
