@@ -62,7 +62,7 @@ powerful toolkit for webcams penetration testing.
 ```
 usage: entropy [-h] [-b [1|2]] [-o <output_path>] [--timeout <timeout>]
                [-t <tasks>] [-c <count>] [-q | -v]
-               [-a <address> | -i <input_file> | --shodan <API> | --zoomeye <API>]
+               [-a <address> | -i <input_file> | --shodan <api> | --zoomeye <api>]
                [-u] [--version]
 
 optional arguments:
@@ -82,8 +82,8 @@ optional arguments:
                         IP:port address of the webcam.
   -i <input_file>, --input <input_file>
                         List of IP:port addresses of webcams.
-  --shodan <API>        Your Shodan API key.
-  --zoomeye <API>       Your ZoomEye API key.
+  --shodan <api>        Attack through Shodan.
+  --zoomeye <api>       Attack through ZoomEye.
   -u, --update          Update Entropy Toolkit.
   --version             Show Entropy Toolkit version.
 ```
