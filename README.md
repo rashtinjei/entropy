@@ -100,7 +100,7 @@ optional arguments:
 
 > entropy -b 2 -l iplist.txt -v
 
-## Example of attacking webcams using shodan
+## Example of attacking webcams through Shodan
 
 > entropy -b 2 -v --shodan PSKINdQe1GyxGgecYz2191H2JoS9qvgD
 
