@@ -54,8 +54,8 @@ group1.add_argument("-v","--verbose",dest='verbose',help="Verbose mode.",action=
 group2=parser.add_mutually_exclusive_group()
 group2.add_argument("-a","--address",metavar="<address>",dest='address',help="IP:port address of the webcam.",type=str)
 group2.add_argument("-i","--input",metavar="<input_file>",dest='inputfile',help="List of IP:port addresses of webcams.",type=str)
-group2.add_argument("--shodan",metavar="<API>",dest='shodan',help="Your Shodan API key.",type=str)
-group2.add_argument("--zoomeye",metavar="<API>",dest='zoomeye',help="Your ZoomEye API key.",type=str)
+group2.add_argument("--shodan",metavar="<api>",dest='shodan',help="Attack through Shodan.",type=str)
+group2.add_argument("--zoomeye",metavar="<api>",dest='zoomeye',help="Attack through ZoomEye.",type=str)
 parser.add_argument("-u","--update",dest='update',help="Update Entropy Toolkit.",action='store_true')
 parser.add_argument("--version",dest='version',help="Show Entropy Toolkit version.",action='store_true')
 
