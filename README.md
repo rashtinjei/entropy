@@ -57,7 +57,12 @@ powerful toolkit for webcams penetration testing.
 
 # Entropy Toolkit execution
 
-> entropy -h
+```
+To run Entropy Toolkit you should 
+execute the following command.
+```
+
+> entropy
 
 ```
 usage: entropy [-h] [-b [1|2]] [-o <output_path>] [--timeout <timeout>]
