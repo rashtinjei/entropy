@@ -80,13 +80,13 @@ optional arguments:
   -t <tasks>, --task <tasks>
                         Run tasks number of connects in parallel.
   -c <count>, --count <count>
-                        The number of IP you want to get from ZoomEye.
+                        The number of IP you want to get.
   -q, --quiet           Quiet mode.
   -v, --verbose         Verbose mode.
   -a <ip:port>, --address <ip:port>
-                        ip:port address of the webcam.
+                        IP and port of the webcam.
   -i <input_file>, --input <input_file>
-                        List of IP:port addresses of webcams.
+                        List of webcams addresses.
   --shodan <api>        Attack through Shodan.
   --zoomeye <api>       Attack through ZoomEye.
   -u, --update          Update Entropy Toolkit.
