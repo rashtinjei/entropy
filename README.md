@@ -67,7 +67,7 @@ execute the following command.
 ```
 usage: entropy [-h] [-b [1|2]] [-o <output_path>] [--timeout <timeout>]
                [-t <tasks>] [-c <count>] [-q | -v]
-               [-a <address> | -i <input_file> | --shodan <api> | --zoomeye <api>]
+               [-a <ip:port> | -i <input_file> | --shodan <api> | --zoomeye <api>]
                [-u] [--version]
 
 optional arguments:
@@ -83,8 +83,8 @@ optional arguments:
                         The number of IP you want to get from ZoomEye.
   -q, --quiet           Quiet mode.
   -v, --verbose         Verbose mode.
-  -a <address>, --address <address>
-                        IP:port address of the webcam.
+  -a <ip:port>, --address <ip:port>
+                        ip:port address of the webcam.
   -i <input_file>, --input <input_file>
                         List of IP:port addresses of webcams.
   --shodan <api>        Attack through Shodan.
