@@ -75,7 +75,7 @@ optional arguments:
   -b [1|2], --brand [1|2]
                         Choose the brand of IP webcam. (1)Netwave, (2)GoAhead.
   -o <output_path>, --output <output_path>
-                        Output into path you input.
+                        Output to the specified path.
   --timeout <timeout>   Timeout in seconds.
   -t <tasks>, --task <tasks>
                         Run tasks number of connects in parallel.
