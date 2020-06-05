@@ -73,7 +73,7 @@ usage: entropy [-h] [-b [1|2]] [-o <output_path>] [--timeout <timeout>]
 optional arguments:
   -h, --help            show this help message and exit
   -b [1|2], --brand [1|2]
-                        Choose the brand of IP Webcam. (1)Netwave, (2)GoAhead.
+                        Choose the brand of IP webcam. (1)Netwave, (2)GoAhead.
   -o <output_path>, --output <output_path>
                         Output into path you input.
   --timeout <timeout>   Timeout in seconds.
