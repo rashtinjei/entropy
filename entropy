@@ -524,7 +524,7 @@ def bundle():
 
 def main():
     class Color(object):
-	I = '\033[1;77m'
+        I = '\033[1;77m'
         A = '\033[1;34m'
         B = '\033[1;31m'
         C = '\033[1;33m'
