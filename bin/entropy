@@ -128,6 +128,11 @@ mv etc/entropy ~/entropy
 cp etc/.disabled/entropy etc
 rm -rf etc/.disabled
 } &> /dev/null
+if [[ ! -d ~/entropy ]]
+then
+   echo -e ""$E"Execution failed!"
+   exit
+fi
 chmod +x entropy
 ./entropy $1 $2 $3 $4 $5 $6 $7 $8 $9
 {
