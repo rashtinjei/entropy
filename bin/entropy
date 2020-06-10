@@ -81,6 +81,11 @@ fi
 cp -r ~/.entropy/RECHECK ~/entropy
 rm -rf ~/.entropy
 } &> /dev/null
+if [[ ! -d ~/arissploit ]]
+then
+   echo -e ""$E"Installation failed!"
+   exit
+fi
 echo -e ""$S"Successfully updated!"
 sleep 1
 exit
