@@ -144,7 +144,7 @@ cp etc/.disabled/entropy etc
 rm -rf etc/.disabled
 } &> /dev/null
 else
-echo -e ""$E"No Internet connection!"
+echo -e ""$E"Execution failed!"
 exit
 fi
 fi
