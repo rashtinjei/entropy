@@ -21,6 +21,9 @@
   <a href="https://twitter.com/entynetproject">
     <img src="https://img.shields.io/badge/twitter-entynetproject-blue.svg">
  </a>
+  <a href="https://github.com/vanpersiexp/expcamera">
+    <img src="https://img.shields.io/badge/based%20on-ExpCamera-red.svg">
+ </a>
 </p>
 
 ***
